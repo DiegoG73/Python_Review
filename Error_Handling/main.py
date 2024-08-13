@@ -20,7 +20,7 @@ finally:
 
 
 #* EXCEPCIONES MÚLTIPLES
-
+"""
 try:
     number = int(input("Introduce el número para elevar al cuadrado: "))
     print("El cuadrado del número es: " + str(number * number))
@@ -31,3 +31,22 @@ except ValueError:
 except Exception as err:
     print(type(err))
     print(f"Ha ocurrido un error: {type(err).__name__}")
+"""
+
+
+#* ESCEPCIONES "PERSONALIZADAS" o LANZAR EXCEPCIONES
+
+try:
+    name = input("Introduce tu nombre: ")
+    age = int(input("Introduce tu edad: "))
+
+    if age < 5 or age > 120:
+        raise ValueError("La edad introducida no es válida")
+    elif len(name) <= 1:
+        raise ValueError("El nombre es incorrecto")
+    else:
+        print("Bienvenido al repaso de Python")
+except ValueError:
+    print("Introduce los datos correctamente por favor")
+except Exception as e:
+    print("Existe un error", e )
